@@ -87,7 +87,7 @@ def ErrorDepend(t0, tf, y0, f):
     error2 = np.array([])
     h_list = np.array([])
 
-    for i in np.arange(1, 3):
+    for i in np.arange(1, 4):
         n = 10 + i
         h = (tf - t0) / n
         t = np.arange(t0, tf, h)
@@ -103,8 +103,12 @@ def ErrorDepend(t0, tf, y0, f):
     #print(np.min(h_list), np.min(error1 / (h * h * h * h)))
     #print(np.min(h_list), np.min(error2 / (h * h * h * h)))
     plt.title("Зависимость максимальной погрешности e/h^4 от шага h ")
-    print(error1/ (h * h * h * h))
-    print(error2/ (h * h * h * h))
+    print("maaaaaaaaaaaaaaaaaaaaaaaaaaaaaax")
+    print(np.max(error1/ (h * h * h * h)))
+    print(np.max(error2/ (h * h * h * h)))
+    print("miiiiiiiiiiiiiiiiiiiiiiiin")
+    print(np.min(error1 / (h * h * h * h)))
+    print(np.min(error2 / (h * h * h * h)))
     plt.yscale('log')
     plt.xscale('log')
     plt.ylabel("error")
@@ -120,7 +124,7 @@ def ErrorDependh(t0, tf, y0, f):
     error2 = np.array([])
     h_list = np.array([])
 
-    for i in np.arange(1, 3):
+    for i in np.arange(1, 4):
         n = 10 + i
         h = (tf - t0) / n
         t = np.arange(t0, tf, h)
@@ -235,7 +239,7 @@ mytable.add_column("T", t)
 mytable.add_column(" Y1 приближенное  ", y[0])
 mytable.add_column(" Y1 точное ", y_exat[0])
 mytable.add_column(" Y1 погрешность ", abs(y[0]-y_exat[0]))
-mytable.add_column(" Y2 приближенное  ", y[0])
+mytable.add_column(" Y2 приближенное  ", y[1])
 mytable.add_column(" Y2 точное ", y_exat[1])
 mytable.add_column(" Y2 погрешность ", abs(y[1]-y_exat[1]))
 print(mytable)
